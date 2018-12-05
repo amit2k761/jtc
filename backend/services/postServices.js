@@ -13,10 +13,9 @@ exports.getPost = (req, res, next) => {
 }
 
 exports.createPost = (req, res, next) => {
-    let postData = req.body.post
     return new Promise((resolve, reject) => {
         const post = new Post({
-            post: postData.trim()
+            post: req.body.post
         });
         post.save()
             .then(result => {

@@ -5,6 +5,7 @@ const postSchema = new Schema({
     post : {
         type:String,
         required:true,
+        trim : true
     },
     likes : {
         type : Number,
