@@ -8,7 +8,6 @@ export class UtctolocalPipe implements PipeTransform {
 
   transform(value: any, args?: any): any {
     let localtime = momenttz.tz(value, 'UTC').tz(momenttz.tz.guess()).format('LLL');
-    console.log('localtime :: ', localtime);
     return localtime;
   }
 
