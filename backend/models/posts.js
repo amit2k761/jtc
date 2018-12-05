@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 const postSchema = new Schema({
     post : {
         type:String,
-        required:true
+        required:true,
+        trim : true
     },
     likes : {
         type : Number,
