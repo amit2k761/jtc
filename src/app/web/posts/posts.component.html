@@ -1,0 +1,16 @@
+<ul class="list-group">
+  <ng-container *ngIf="posts.length ; else noPosts" >
+  <li class="list-group-item" *ngFor="let post of posts">{{post.post}}
+    <div class="float-right">
+      <div class="float-left">{{post.createdDate | utctolocal}}</div>
+      <div class="float-left pl-4"><i (click)="upVotePost(post._id)" class="showCursor fa fa-thumbs-up pr-2" aria-hidden="true"></i>{{post.likes}}</div>
+    </div>
+  </li>
+</ng-container>
+</ul>
+
+<ng-template  #noPosts>
+  <li class="list-group-item">No posts found</li>
+   </ng-template>
+
+<post-create></post-create>
